@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Spruce Grove OS — a no-frills introduction for Greg at Lock Doctor. Local-first agent tooling. Nothing for sale.">
+<title>Spruce Grove OS — for Greg (no frills)</title>
+<link rel="icon" type="image/png" href="spruce_grove_badge_dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1d211e; --spruce-deep:#20392b; --spruce:#2d4f3a; --moss:#588f5e; --moss-ink:#6fa97a;
+    --cedar:#d2a069; --stone:#d6d2c8; --mist:#f0e1c8;
+    --line:rgba(240,225,200,.14); --card:rgba(45,79,58,.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after{transition:none !important} html{scroll-behavior:auto} }
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:
+    radial-gradient(1000px 460px at 15% -5%, rgba(88,143,94,.14), transparent 60%),
+    radial-gradient(900px 480px at 95% 110%, rgba(210,160,105,.10), transparent 60%),
+    var(--charcoal); color:var(--stone); line-height:1.65; font-size:16px}
+  body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{max-width:760px; margin:0 auto; padding:0 20px; position:relative; z-index:2}
+  a{color:var(--cedar)}
+  :focus-visible{outline:2px solid var(--cedar); outline-offset:2px; border-radius:4px}
+  .kicker{font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.2em; font-size:.64rem; color:var(--moss-ink)}
+  .kicker.ember{color:var(--cedar)}
+  h1{font-size:clamp(1.8rem,5vw,2.6rem); line-height:1.12; color:var(--mist); margin:12px 0 10px; font-weight:800; letter-spacing:-.01em}
+  h2{font-size:1.2rem; color:var(--mist); margin-bottom:8px; font-weight:700}
+  p.sub{color:rgba(214,210,200,.75); max-width:620px; font-size:1rem}
+  header{padding:52px 0 30px}
+  .lockup{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+  .lockup img{width:44px; height:44px; border-radius:10px}
+  .lockup span{font-family:'JetBrains Mono',monospace; font-size:.68rem; letter-spacing:.16em; color:var(--stone)}
+  .lockup span b{color:var(--cedar)}
+  section{padding:26px 0 4px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:14px}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:13px}
+  @media(max-width:700px){.grid3{grid-template-columns:1fr}}
+  ul.tight{list-style:none; display:grid; gap:7px}
+  ul.tight li{padding-left:18px; position:relative; font-size:.92rem}
+  ul.tight li::before{content:""; position:absolute; left:0; top:.62em; width:8px; height:2px; background:var(--moss)}
+  .small{font-size:.85rem; color:rgba(214,210,200,.66)}
+  pre.term{background:rgba(29,33,30,.85); border:1px solid var(--line); border-left:3px solid var(--cedar); border-radius:10px; padding:14px 16px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--mist); overflow-x:auto; line-height:1.7}
+  pre.term .c{color:rgba(214,210,200,.55)}
+  blockquote{font-family:'Fraunces',Georgia,serif; font-size:1.18rem; color:var(--mist); line-height:1.5; border-left:3px solid var(--cedar); padding:6px 0 6px 18px; margin:20px 0}
+  .note{border-left:3px solid var(--cedar); background:rgba(210,160,105,.07); border-radius:8px; padding:13px 15px; font-size:.88rem; margin:14px 0}
+  .backlink{display:inline-block; margin-bottom:6px; font-size:.84rem}
+  footer{padding:34px 0 54px; font-size:.76rem; color:rgba(214,210,200,.55)}
+  @media print{ body{background:#fff; color:#1c2420} h1,h2,.small,li,p,blockquote{color:#1c2420} .kicker,.lockup span{color:#2d4f3a} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="lockup">
+    <img src="spruce_grove_badge_dark.png" alt="Spruce Grove badge">
+    <span>gran&middot;lund &middot; sv. &middot; <b>spruce grove</b> &middot; os</span>
+  </div>
+  <div class="kicker ember">For Greg &middot; no frills &middot; nothing for sale &middot; unlisted page</div>
+  <h1>You have the tools and the power now.</h1>
+  <p class="sub">That job page I sent you — the one with your Ford authorization pre-drafted and every field copy-paste ready? An agent built that in minutes, on my laptop, for free. This page is the plain-language version of what that is, how it works, and why it matters for a shop like yours. No signup, no seat licenses, no demo call. Just the truth about where the leverage moved.</p>
+</header>
+
+<section>
+  <h2>The short version</h2>
+  <div class="card">
+    <p style="font-size:.96rem">Spruce Grove OS is an <b>agent harness that lives on your own machine</b>. You tell it what you need in plain English — "build a page with the customer's key specs so Ford authorization is a copy-paste" — and it builds it, runs it, and keeps it maintained. Locally. Under your control. The software world spent fifteen years teaching shops to <b>rent their own workflow back</b>, one seat per month, forever. This is the opposite: the license is MIT, the data lives in files you own, and nothing phones home to survive.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Three things worth knowing</h2>
+  <div class="grid3">
+    <div class="card"><h3>Local-first, on purpose</h3><p class="small">Your jobs, customer info, and credentials live in files and SQLite on your own hardware. There's no vendor database full of your customers to breach, no price hike holding your workflow hostage. If every software company vanished tonight, nothing you built stops working.</p></div>
+    <div class="card"><h3>The harness is the key, not the models</h3><p class="small">Any AI brain (OpenAI, Anthropic, Gemini, local) plugs in with one config line — they're rented commodities. What you own is the harness: the permission gates, the approval steps, the skills, the memory. That asset compounds; the model bill doesn't.</p></div>
+    <div class="card"><h3>Human approves, always</h3><p class="small">The agent drafts; you send. Anything consequential waits for a yes from a human. API keys stay in local config, customer PII stays out of prompts. The harness makes the careful path the easy path.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Built this week, by the same agent, for real doors</h2>
+  <div class="card">
+    <ul class="tight">
+      <li><b>The page you're holding</b> — your AKL job packet: VIN, fob spec, credentials checklist, pre-drafted Ford authorization. Built while the coffee was brewing.</li>
+      <li><b>A lead-intake lane for a drone survey company</b> — form, geocode, ticket, dashboard. Their $100k lidar rig surveys land structured every time; the client (ZipLine) gets complete data with zero chasing.</li>
+      <li><b>A booking site for a Bentonville barbershop</b> — shipped to a real door on the square, Square-integrated.</li>
+      <li><b>This pipeline dashboard</b> — every shop in the territory, tracked like a craft instead of a CRM subscription.</li>
+    </ul>
+    <p class="small" style="margin-top:10px">No mockups. All of it shipped. All of it owned by the people who use it.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What it could build for Lock Doctor</h2>
+  <div class="card">
+    <ul class="tight">
+      <li><b>AKL intake packets</b> — every all-keys-lost call generates this exact page automatically: VIN, fob spec, credentials checklist, pre-drafted Ford request.</li>
+      <li><b>After-hours capture</b> — voicemail-to-text plus a morning callback list, so 2 AM emergencies become 8 AM jobs.</li>
+      <li><b>Listing sync auditor</b> — hours, phone, services checked across Google, Bing, Yelp weekly; mismatches flagged and drafted.</li>
+      <li><b>Review follow-through</b> — post-job review requests drafted and ready; new reviews surfaced so nothing sits unanswered.</li>
+      <li><b>The Friday one-pager</b> — jobs, revenue by service, stock, review trend. Five minutes of reading instead of an evening of receipts.</li>
+    </ul>
+    <p class="small" style="margin-top:10px">Every line of that runs on your machine, works with the tools you already trust, and replaces zero of your judgment. It just removes the screen-shaped obstacles between you and the customer in front of you.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The honest fine print</h2>
+  <div class="card">
+    <p class="small">Model calls send prompt text to the model provider over encrypted connections — so keys stay in local config, customer PII stays out of prompts by default, and consequential actions wait for a human yes. The harness can't make carelessness impossible; nothing can, and anything claiming to is selling you something. Spruce Grove OS is MIT licensed and built from <b>Code Puppy</b> by Michael Pfaffenberger — the lineage is stated in writing, because "rooted in honest and true" has to include your sources.</p>
+  </div>
+</section>
+
+<section>
+  <h2>If you're curious, the whole on-ramp</h2>
+  <pre class="term"><span class="c"># one evening, a few dollars of usage, on your own Mac or PC</span>
+git clone https://github.com/t-granlund/SPRUCE-GROVE-OS
+cd SPRUCE-GROVE-OS
+uv sync
+uv run spruce-grove
+
+<span class="c"># then just tell it what you need, like you'd tell Jonah:</span>
+<span class="c">    "Draft the Ford authorization packet for this VIN."</span></pre>
+  <div class="note">And one standing invitation: the <b>Leather Apron Club (the Junto)</b> — a mutual-improvement circle reborn in Bentonville, first council <b>Friday, September 18, 2026, at Bentonville Barber Company</b>. Tradesmen helping tradesmen since Franklin asked the question: <i>"how can the Junto assist you in any of your honorable designs?"</i> You've been answering it all week, Greg. Chair's open.</div>
+</section>
+
+<footer>
+  <p class="backlink">&larr; <a href="index.html">Back to the job page</a></p>
+  <p>Spruce Grove OS — MIT licensed &middot; built from Code Puppy by Michael Pfaffenberger &middot; runs locally, on hardware you own &middot; unlisted page, not indexed &middot; together we are better, always.</p>
+</footer>
+</div>
+</body>
+</html>
